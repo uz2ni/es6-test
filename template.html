@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="message"></div>
+    <script>
+    // template
+
+
+    // tagged template literals
+      const data = [
+        {
+          name : 'starbucks',
+          order : true,
+          items : ['americano', 'milk', 'green-tea']
+        },
+        {
+          name : 'ediya',
+          order : false
+        },
+        {
+          name : 'coffee-King',
+          order : true,
+          items : ['strawberry latte', 'cold brew']
+        }
+      ];
+
+      function fn(tags, name, items) {
+        console.log(tags);
+        console.log(name);
+        console.log(items);
+        if(typeof items === 'undefined') {
+          items = "<span style='color:pink;'>주문 가능한 상품이 없습니다.</span>";
+        }
+        return (tags[0] + name + tags[1] + items + tags[2]);
+      }
+
+      // const template = fn`<div>welcome ${data[1].name} !! </div>
+      //   <h2>주문가능항목</h2><div></div>${data[1].items}</div>`;
+      //
+      // console.log(template);
+
+      data.forEach((v) => {
+        let template2 = fn`<div>welcome ${v.name} !! </div>
+          <h2>주문가능항목</h2><div>${v.items}</div><hr />`;
+          document.querySelector("#message").innerHTML += template2;
+      })
+
+    </script>
+  </body>
+</html>
