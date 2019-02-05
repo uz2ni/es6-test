@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // default parameters 1
+    function gob(a, b=3) {
+      return a * b;
+    }
+    console.log(gob(2)); // 6
+
+    // default parameters 2
+    function objGob(a, b={value:2}) {
+      return a * b.value;
+    }
+    console.log(objGob(4)); // 8
+
+    // rest parameters
+    function rest1() {
+      console.log(toString.call(arguments)); //[object Arguments]
+      //const argArray = Array.prototype.slice.call(arguments);
+      //const argArray = Array.from(arguments);
+      
+      console.log(toString.call(argArray)); //[object Array]
+      console.log(argArray);
+
+    }
+    const result1 = rest1(5,2,10,3,"123");
+    </script>
+  </body>
+</html>

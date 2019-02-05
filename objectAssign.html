@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+const healthObj = {
+  showHealth : function() {
+    console.log("오늘의 운동시간:" + this.healthTime);
+  }
+}
+const myHealth = Object.assign(Object.create(healthObj), {
+  name: "yj",
+  healthTime: "15:00"
+});
+console.log("myhealth is ", myHealth);
+myHealth.showHealth();
+    </script>
+  </body>
+</html>

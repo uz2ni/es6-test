@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 이전 js
+      setTimeout (function() {
+      console.log('hello world');
+      }, 1000);
+
+      let newArr = [1,2,3,4,5].map(function(value, index, object) {
+      return value * 3;
+      });
+
+
+      // ES6 화살표 함수 사용
+      setTimeout (() => {
+      console.log('arrow hello world');
+    }, 500);
+
+      let newArr2 = [1,2,3,4,5].map((v) => (v*3) );
+      console.log(newArr2);
+
+
+      // 이전 js this
+      function Hello(a) {
+        this.a = a; //생성자 Hello의 인스턴스 객체를 가리키는 this
+      }
+      Hello.prototype.helloArray = function (arr) {
+        return arr.map(function (x) {
+        return this.a+ ' ' + x; // window 객체를 가리키는 this
+        });
+
+      }
+      var hello = new Hello('hi');
+      console.log(hello.helloArray(['Ann', 'Sunny'])); // undefined Ann, undefined Sunny 출력
+
+
+      // 화살표 함수 this
+      function Hello(b) {
+        this.b = b;
+      }
+      Hello.prototype.helloArray = function (arr) {
+        return arr.map(x => `${this.b} ${x}`); // 상위 스코프인 helloArray를 가리키는 this
+      };
+
+    </script>
+  </body>
+</html>

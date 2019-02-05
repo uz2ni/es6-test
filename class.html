@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 기존 js
+      function Flower(name) {
+        this.name = name;
+      }
+      Flower.prototype.showFlower = function() {
+        console.log("꽃의 이름은 " + this.name + " 입니다.");
+      };
+      const f = new Flower('장미');
+      console.log(f);
+      f.showFlower();
+
+      // ES6 class
+      class Flower2 {
+        construnctor(name) {
+          this.name = name;
+        }
+        showFlower() {
+          console.log("꽃의 이름은 " + this.name + " 입니다.");
+        }
+      }
+      const f2 = new Flower('튤립');
+      console.log(f2);
+      f2.showFlower();
+
+    </script>
+  </body>
+</html>
