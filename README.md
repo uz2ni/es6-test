@@ -1,2 +1,2 @@
-# js test
-javascript 연습
+# es6 test
+javascript es6 연습
